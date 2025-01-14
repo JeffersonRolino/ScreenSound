@@ -1,9 +1,9 @@
 ﻿using ScreenSound.Models;
 
 Banda beatles = new("The Beatles");
-beatles.AdicionarNota(10);
-beatles.AdicionarNota(8);
-beatles.AdicionarNota(9);
+beatles.AdicionarNota(new Avaliacao(10));
+beatles.AdicionarNota(new Avaliacao(8));
+beatles.AdicionarNota(new Avaliacao(6));
 
 Banda led_zeppelin = new("Led Zeppelin");
 
@@ -144,7 +144,7 @@ void AvaliarUmaBanda()
         Banda banda = bandasRegistradas[nomeDaBanda];
         Console.Write($"Qual a nota que a banda {nomeDaBanda} merece: ");
         int nota = int.Parse(Console.ReadLine()!);
-        banda.AdicionarNota(nota);
+        banda.AdicionarNota(new Avaliacao(nota));
         Console.WriteLine($"\nA nota {nota} foi registrada com sucesso para a banda {nomeDaBanda}");
         Thread.Sleep(2000);
         Console.Clear();
